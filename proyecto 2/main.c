@@ -8,7 +8,7 @@ int main()
     int edad;
     float peso;
     char sexo;
-    char nombre[20];
+    char nombre[15];
 
     printf("Ingrese edad: ");
     scanf("%d", &edad);

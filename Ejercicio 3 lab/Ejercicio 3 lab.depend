@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1598456454 source:c:\users\rac\desktop\tec. univ. en programación\programación y laboratorio 1er año\c\ejercicio 3 lab\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<stdbool.h>
+
