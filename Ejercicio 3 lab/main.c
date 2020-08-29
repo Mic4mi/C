@@ -95,7 +95,7 @@ int main()
     }
     else
     {
-        printf("La mujer con mayor temperatura tiene %.2f y su incial es %c", maxTemp, inicial);
+        printf("La mujer con mayor temperatura tiene %.2f y su inicial es %c", maxTemp, inicial);
     }
 
     return 0;
