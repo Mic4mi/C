@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1598815211 source:c:\users\rac\desktop\tec. univ. en programación\programación y laboratorio 1er año\c\ejercicio del classroom general 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
