@@ -87,5 +87,7 @@ int main()
     }
     while(seguir == 's');
 
+    printf("Promedio: %.2f", calcularPromedio(2,4));
+
     return 0;
 }
