@@ -1,61 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <conio.h>
 
-#define a "Hola, felices fiestas"
-#define b "Chin chin! Brindemos"
-#define c "Feliz año, chau chau"
 #define d "Salis"
 
 /*Para brindar, primero hay que saludar
 Para despedirse, primero hay que brindar y saludar*/
 
+
+char menu();
+int saludar();
+int brindar(int saludo);
+int despedir(int saludo, int brindis);
+
 int main()
 {
-    char opcion;
     char seguir = 's';
     int saludarBandera = 0;
     int brindarBandera = 0;
 
     do
     {
-        // Limpiar la pantalla:
-        system("cls");
-        printf("******Menu de opciones******\n");
-        printf("a. Saludar\n");
-        printf("b. Brindar\n");
-        printf("c. Despedir\n");
-        printf("d. Salir\n\n");
-        printf("Ingrese opcion\n");
-        fflush(stdin);
-        scanf("%c", &opcion);
-        opcion = tolower(opcion);
-
-        switch(opcion)
+        switch(menu())
         {
         case 'a':
-            printf("%s\n", a);
-            saludarBandera = 1;
+            if(!saludar())
+            {
+                saludarBandera = 1;
+            }
             break;
         case 'b':
-            if(saludarBandera == 0)
+            if(!brindar(saludarBandera))
             {
-                printf("Para brindar, primero hay que saludar.\n");
-            }
-            else
-            {
-                printf("%s\n", b);
                 brindarBandera = 1;
             }
             break;
         case 'c':
-            if(saludarBandera == 0 || brindarBandera == 0)
+            if(!despedir(saludarBandera, brindarBandera))
             {
-                printf("Para despedirte, primero hay que saludar y/o brindar!!\n");
-            }
-            else
-            {
-                printf("%s\n", c);
+                saludarBandera = 0;
+                brindarBandera = 0;
             }
             break;
         case 'd':
@@ -87,7 +72,68 @@ int main()
     }
     while(seguir == 's');
 
-    printf("Promedio: %.2f", calcularPromedio(2,4));
-
     return 0;
+}
+
+char menu()
+{
+    char opcion;
+    // Limpiar la pantalla:
+    system("cls");
+    printf("******Menu de opciones******\n");
+    printf("a. Saludar\n");
+    printf("b. Brindar\n");
+    printf("c. Despedir\n");
+    printf("d. Salir\n\n");
+    printf("Ingrese opcion\n");
+    fflush(stdin);
+    scanf("%c", &opcion);
+    opcion = tolower(opcion);
+    return opcion;
+}
+int saludar()
+{
+    int cant;
+    int error = 0;
+    cant = printf("Hola, felices fiestas!\n");
+    if( cant != 23)
+    {
+        error = 1;
+    }
+    return error;
+}
+
+int brindar(int saludo)
+{
+    int error = 0;
+    if(saludo)
+    {
+        printf("Chin chin! Brindemos\n");
+    }
+    else
+    {
+        printf("Para brindar, primero hay que saludar.\n");
+        error = 1;
+    }
+    return error;
+}
+
+int despedir(int saludo, int brindis)
+{
+    int error = 0;
+    if(!saludo)
+    {
+        printf("Para despedirte, primero hay que saludar...\n");
+        error = 1;
+    }
+    else if (!brindis)
+    {
+        printf("Para despedirte, primero hay que brindar...\n");
+        error = 1;
+    }
+    else
+    {
+        printf("Feliz anio, chau chau\n");
+    }
+    return error;
 }

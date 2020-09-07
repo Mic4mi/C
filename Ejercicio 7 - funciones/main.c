@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "acunia.h"
 
 int main()
 {
-    printf("Hello world!\n");
+    calcularPromedio(5,4);
     return 0;
 }
