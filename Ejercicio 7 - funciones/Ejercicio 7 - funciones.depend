@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1599445703 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 7 - funciones\acunia.c
+	"acunia.h"
+
+1599445548 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 7 - funciones\acunia.h
+
+1599479495 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 7 - funciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"acunia.h"
+
