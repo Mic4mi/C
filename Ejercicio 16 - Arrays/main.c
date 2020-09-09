@@ -38,7 +38,7 @@ int main()
     printf("\n Ingrese una vocal que quiera\n");
     fflush(stdin);
     scanf("%c", &vocalRepetida);
-    printf("La vocal %c se repite %d veces.\n", vocalRepetida, contarVocal(vocales, TAM, vocalRepetida));
+    printf("La vocal %c aparece %d veces.\n", vocalRepetida, contarVocal(vocales, TAM, vocalRepetida));
 
 
     return 0;
