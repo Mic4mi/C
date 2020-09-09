@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1599663008 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 15 - arrays\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+

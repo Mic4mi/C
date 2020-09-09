@@ -5,11 +5,14 @@
 
 #define TAM 6
 
+
 /*
-1) Vector de 6 elementos
-2) Pedir 5 numeros
-3) En la ultima posicion poner la suma de los 5 numeros previos
+Funcion con array.
+
+el nombre de un vector es una dirección de memoria.
 */
+
+void mostrarVectoresEnteros(int vec[], int tam);
 
 int main()
 {
@@ -24,15 +27,24 @@ int main()
     }
 
     // Sumo elementos
-    for(int i = 0; i < TAM-1; i++){
+    for(int i = 0; i < TAM-1; i++)
+    {
         suma += numeros[i];
     }
     numeros[5] = suma;
 
     // Muestro
-    printf("\nEl array quedo: \n");
-    for(int i = 0; i < TAM; i++){
-        printf("%d, ", numeros[i]);
-    }
+    mostrarVectoresEnteros(numeros, TAM);
+
     return 0;
+}
+
+void mostrarVectoresEnteros(int vec[], int tam)
+{
+    printf("\nEl vector queda:\n");
+    for(int i = 0; i < tam; i++)
+    {
+        printf("%d ", vec[i]);
+    }
+    printf("\n\n");
 }
