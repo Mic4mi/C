@@ -37,7 +37,7 @@ int main()
             }
             break;
         case 'c':
-            if(!despedir(saludarBandera, brindarBandera))
+            if(!despedir(saludarBandera, brindarBandera)) //
             {
                 saludarBandera = 0;
                 brindarBandera = 0;
@@ -94,11 +94,11 @@ char menu()
 int saludar()
 {
     int cant;
-    int error = 0;
+    int error = 0; // todo ok
     cant = printf("Hola, felices fiestas!\n");
     if( cant != 23)
     {
-        error = 1;
+        error = 1; // error
     }
     return error;
 }
