@@ -21,39 +21,39 @@ void buscarPosicion(int vec[], int tam, int b);
 
 int main()
 {
-    int ojete[] = {24, 30, 24, 25};
+    int numerillos[] = {24, 30, 24, 25};
     int suma;
     int mayor;
     int menor;
     float prom;
 
     // Suma
-    suma = sumarVector(ojete, TAM);
+    suma = sumarVector(numerillos, TAM);
     printf("1. La suma del contenido del vector es: %d\n", suma);
 
     // Mayor
-    mayor = mayorNum(ojete, TAM);
+    mayor = mayorNum(numerillos, TAM);
     printf("2. El numero mayor es: %d\n", mayor);
 
     // Menor
-    menor = menorNum(ojete, TAM);
+    menor = menorNum(numerillos, TAM);
     printf("3. El numero menor es: %d\n", menor);
 
     // Cuantas veces se repite el mayor
-    printf("4. Cantidad de repeticiones del numero mayor: %d\n", contenidoRepetido(ojete, TAM, mayor));
+    printf("4. Cantidad de repeticiones del numero mayor: %d\n", contenidoRepetido(numerillos, TAM, mayor));
 
     // Cuantas veces se repite el menor
-    printf("5. Cantidad de repeticiones del numero menor: %d\n", contenidoRepetido(ojete, TAM, menor));
+    printf("5. Cantidad de repeticiones del numero menor: %d\n", contenidoRepetido(numerillos, TAM, menor));
 
     // Promedio
-    prom = promedioVector(ojete, TAM);
+    prom = promedioVector(numerillos, TAM);
     printf("6. El promedio de los elementos del vector es: %.2f\n", prom);
 
     //Buscar posicion menor
-    buscarPosicion(ojete, TAM, menor);
+    buscarPosicion(numerillos, TAM, menor);
 
     //Buscar posicion mayor
-    buscarPosicion(ojete, TAM, mayor);
+    buscarPosicion(numerillos, TAM, mayor);
 
     return 0;
 }
