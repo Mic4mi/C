@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1601141951 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 29 - ordenar alfabeticamente\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
