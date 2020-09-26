@@ -5,8 +5,8 @@
 
 void mostrarVectoresEnteros(int vec[], int tam);
 void mostrarVectoresDecimales(float vec[], int tam);
-void mostrarAlumno(int legajo, int n1, int n2, float promedio, char genero);
-void mostrarAlumnos(int legajos[], int notas1[], int notas2[], float promedios[], char generos[], int tam);
+void mostrarAlumno(char nombre[], int legajo, int n1, int n2, float promedio, char genero);
+void mostrarAlumnos(char nombres[][20],int legajos[], int notas1[], int notas2[], float promedios[], char generos[], int tam);
 
 
 int main()
@@ -16,9 +16,11 @@ int main()
     int notasP2[TAM] = {4, 2, 6, 8, 7};
     float promedios[TAM] = {6, 5.5, 8, 6.5, 4};
     char generos[TAM] = {'m', 'm', 'f', 'f', 'm'};
+    char nombres[TAM][20] = {"Saturno", "Homeros", "Marita", "Beruska", "Carlito"};
     float auxFloat;
     int auxInt;
     char auxChar;
+    char auxStr[20];
 
 
 
@@ -28,6 +30,11 @@ int main()
         //Cargar legajos
         printf("Ingrese los numeros de legajo\n");
         scanf("%d", &legajos[i]);
+
+        //Cargar nombres
+        printf("Ingrese nombre: \n");
+        fflush(stdin);
+        fgets(nombres[i], 20, stdin);
 
         //Cargar notas p1
         printf("Ingrese la nota del primer parcial\n");
@@ -47,7 +54,7 @@ int main()
     }
     */
 
-    mostrarAlumnos(legajos, notasP1, notasP2, promedios, generos, TAM);
+    mostrarAlumnos(nombres, legajos, notasP1, notasP2, promedios, generos, TAM);
 
     for(int i = 0; i < TAM - 1; i++)
     {
@@ -74,28 +81,32 @@ int main()
                 auxChar = generos[i];
                 generos[i] = generos[j];
                 generos[j] = auxChar;
+
+                strcpy(auxStr, nombres[i]);
+                strcpy(nombres[i], nombres[j]);
+                strcpy(nombres[j], auxStr);
             }
         }
     }
 
-    mostrarAlumnos(legajos, notasP1, notasP2, promedios, generos, TAM);
+    mostrarAlumnos(nombres, legajos, notasP1, notasP2, promedios, generos, TAM);
 
     return 0;
 }
 
-void mostrarAlumno(int legajo, int n1, int n2, float promedio, char genero)
+void mostrarAlumno(char nombre[], int legajo, int n1, int n2, float promedio, char genero)
 {
-    printf(" %4d      %2d     %4d        %2.2f      %c\n", legajo, n1, n2, promedio, genero);
+    printf(" %20s %4d      %2d     %4d        %2.2f      %c\n", nombre, legajo, n1, n2, promedio, genero);
 }
 
-void mostrarAlumnos(int legajos[], int notas1[], int notas2[], float promedios[], char generos[], int tam)
+void mostrarAlumnos(char nombres[][20], int legajos[], int notas1[], int notas2[], float promedios[], char generos[], int tam)
 {
     //system("cls");
-    printf("Legajo  Parcial1  Parcial2  Promedio  Genero\n\n");
+    printf("              Nombre  Legajo  Parcial1  Parcial2  Promedio  Genero\n\n");
 
     for(int i = 0; i < tam; i++)
     {
-        mostrarAlumno(legajos[i], notas1[i], notas2[i], promedios[i], generos[i]);
+        mostrarAlumno(nombres[i], legajos[i], notas1[i], notas2[i], promedios[i], generos[i]);
     }
     printf("\n\n");
 }

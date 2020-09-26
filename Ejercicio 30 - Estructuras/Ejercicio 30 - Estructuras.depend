@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1601146608 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 30 - estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
