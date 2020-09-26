@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 #include <string.h>
 
 int main()
@@ -9,6 +10,7 @@ int main()
     char nombre3[] = "Pepe";
     char nombre4[] = "Alicia";
     char nombre5[] = "JUAN";
+    char nombre6[] = "anastasia";
 
     /* para comparar cadenas podemos emplear strcmp() que significa string comparison.
        strcmp() devuelve un entero: 0 si ambas cadenas son iguales, 1 o -1 si no lo son.
@@ -31,6 +33,29 @@ int main()
     */
     printf("Con strcmp: %d\n", strcmp(nombre1, nombre5));
     printf("Con stricmp: %d\n", stricmp(nombre1, nombre5));
+
+
+    /*
+    ¿cómo paso una cadena a mayúscula o a mínuscula? NO PUEDO USAR TOLOWER
+    strlwr() me convierte una cadena completa a minuscula.
+    strupr() me convierte una cadena completa a mayúscula.
+    */
+
+    // esto convierte una cadena a minusculas
+    printf("%s\n", nombre5);
+    for(int i = 0; i < strlen(nombre5); i++)
+    {
+        nombre5[i] = tolower(nombre5[i]);
+    }
+    printf("%s\n", nombre5);
+
+    // esto convierte una cadena a mayusculas
+    printf("%s\n", nombre6);
+    for(int i = 0; i < strlen(nombre6); i++)
+    {
+        nombre6[i] = toupper(nombre6[i]);
+    }
+    printf("%s\n", nombre6);
 
     return 0;
 }
