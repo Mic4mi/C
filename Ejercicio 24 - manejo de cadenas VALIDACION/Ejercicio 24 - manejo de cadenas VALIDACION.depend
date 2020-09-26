@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1600908525 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 24 - manejo de cadenas validacion\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

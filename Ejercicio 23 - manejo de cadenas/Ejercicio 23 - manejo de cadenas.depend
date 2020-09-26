@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1600822849 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\ejercicio 23 - manejo de cadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
