@@ -91,10 +91,11 @@ int altaPersona(ePersona list[], int len, char name[], char sexo, float altura)
         if(indice == -1){
             printf("Sistema Completo.\n");
         }
-        else {
+
+        for(int i = 0; i < len; i++)
+        {
 
         }
-
     }
 
 }
