@@ -21,7 +21,7 @@ int main()
 
     char nombre[20];
     char apellido[20];
-    char nombreCompleto[39];
+    char nombreCompleto[41]; // corrección de clase
 
     printf("Ingrese nombre\n");
     fflush(stdin);
