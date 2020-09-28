@@ -15,6 +15,8 @@ typedef struct
     float prom;
 } eAlumno;
 
+void mostrarAlumnos(eAlumno vec[], int tam);
+void mostrarAlumno(eAlumno unAlumno);
 
 int main()
 {
@@ -45,19 +47,29 @@ int main()
 
     }
 
+    mostrarAlumnos(lista, TAM);
 
-    //mostrar las estructuras
-    system("cls");
-    printf("ALUMNOS:\n");
-    for(int i = 0; i < TAM; i++)
-    {
-        printf("Nombre del alumno: %s\n", lista[i].nombre);
-        printf("Legajo: %d\n", lista[i].legajo);
-        printf("Sexo: %c\n", lista[i].sexo);
-        printf("Primer parcial: %d\n", lista[i].nota1);
-        printf("Segundo parcial: %d\n", lista[i].nota2);
-        printf("Promedio: %.2f\n", lista[i].prom);
-        printf("\n\n");
-    }
     return 0;
+}
+
+void mostrarAlumnos(eAlumno vec[], int tam)
+{
+    system("cls");
+    printf(" Legajo  Nombre  Sexo   Nota1  Nota2  Promedio\n");
+    for(int i = 0; i < tam; i++)
+    {
+        mostrarAlumno(vec[i]);
+    }
+    printf("\n\n");
+}
+
+void mostrarAlumno(eAlumno unAlumno)
+{
+    printf(" %d %s %c %2d %2d %2.2f\n",
+           unAlumno.legajo,
+           unAlumno.nombre,
+           unAlumno.sexo,
+           unAlumno.nota1,
+           unAlumno.nota2,
+           unAlumno.prom);
 }
