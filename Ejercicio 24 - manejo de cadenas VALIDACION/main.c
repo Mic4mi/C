@@ -27,3 +27,16 @@ int main()
 
     return 0;
 }
+
+
+
+            //Pedir nombre
+            printf("Ingrese nombre: ");
+            fflush(stdin);
+            gets(newEmployee.name);
+            while(newEmployee.name > 51)
+            {
+                printf("Invalido. Ingrese nombre: ");
+                fflush(stdin);
+                gets(newEmployee.name);
+            }

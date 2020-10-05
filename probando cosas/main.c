@@ -1,92 +1,64 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
-int menu(int b1, int b2, int operando1, int operando2);
+void cualEsMayor(int a, int b);
+int sumarArreglo(int vec[], int len, int* pResult);
+void sumarArreglo2(int vec[], int len);
 
 int main()
 {
-    /*
-    int x;
-    int y;
-    int xF = 0;
-    int yF = 0;
+// a. Realizar un algoritmo que lea dos números y nos diga cual de ellos es mayor o bien si son iguales ♣
+//b. Los siguientes números {10,5,23,7,15,65,85} se encuentran en un arreglo. Realizar un algoritmo que los sume.
 
-    x = 5;
-    xF = 1;
-    y = 2;
-    yF = 1;
-    */
+    int numeros[] = {10,5,23,7,15,65,85};
+    int sumaNumeros;
 
-    char letra;
-    printf("Escribe un car�cter:\n");
-    scanf("%c", &letra);
-    if (!isalpha(letra))
-    {
-       printf("NO es una letra");
-    }
-    else
-    {
-        printf("Es una letra");
-    }
-
-
-
-
-
-    //menu(xF, yF, x, y);
-
-    //isalpha(x);
-
-    /*
-    Una funcion que imprima el menu, pero si x tiene valor y su bandera ahora es true; reciba eso
-    y reemplaze x por ese valor (lo mismo con y).
-    */
-
-    //menu();
+    //punto a
+    cualEsMayor(10, 10);
+    // punto b
+    sumarArreglo(numeros, 7, &sumaNumeros);
+    printf("La suma del arreglo de numeros es: %d\n", sumaNumeros);
+    //punto c
+    sumarArreglo2(numeros, 7);
 
     return 0;
 }
 
-int menu(int b1, int b2, int operando1, int operando2)
+void cualEsMayor(int a, int b)
 {
-    system("cls");
-    printf("********Menu de opciones********\n");
-
-    if(b1 == 0 && b2 == 0)
+    if(a == b)
     {
-        printf("1. Ingresar 1er operando (A = x)\n");
-        printf("2. Ingresar 2do operando (B = y)\n");
+        printf("Los numeros %d y %d son iguales.\n", a, b);
     }
-    else if(b1 == 1 && b2 == 0)
+    if(a < b)
     {
-        printf("1. Ingresar 1er operando (A = %d)\n", operando1);
-        printf("2. Ingresar 2do operando (B = y)\n");
+        printf("El numero %d es mayor a %d\n", b, a);
     }
-    else if(b1 == 0 && b2 == 1)
+    else if(a > b)
     {
-        printf("1. Ingresar 1er operando (A = x)\n");
-        printf("2. Ingresar 2do operando (B = %d)\n", operando2);
+        printf("El numero %d es mayor a %d\n", a, b);
     }
-    else
-    {
-        printf("1. Ingresar 1er operando (A = %d)\n", operando1);
-        printf("2. Ingresar 2do operando (B = %d)\n", operando2);
-    }
-    printf("3. Calcular todas las operaciones\n");
-    printf("   a) Calcular la suma (A+B)\n");
-    printf("   b) Calcular la resta (A-B)\n");
-    printf("   c) Calcular la division (A/B)\n");
-    printf("   d) Calcular la multiplicacion (A*B)\n");
-    printf("   e) Calcular el factorial (A!)\n");
-    printf("4. Informar resultados\n");
-    printf("   a) Resultado de (A+B): \n");
-    printf("   b) Resultado de (A-B): \n");
-    printf("   c) Division de (A/B): \n");
-    printf("   d) Multiplicacion de (A*B): \n");
-    printf("   e) Factorial (A!): \n");
-    printf("5. Salir\n\n");
-
-    return 0;
 }
 
+int sumarArreglo(int vec[], int len, int* pResult){
+    int error = -1;
+    int acumI = 0;
+    if(vec != NULL && len > 0){
+        for(int i = 0; i < len; i++){
+        acumI += vec[i];
+    }
+    *pResult = acumI;
+    error = 0;
+    }
+    return error;
+}
+
+void sumarArreglo2(int vec[], int len){
+    int acumI = 0;
+    for(int i = 0; i < len; i++){
+        acumI += vec[i];
+    }
+    printf("La suma del arreglo de numeros es:: %d\n", acumI);
+}

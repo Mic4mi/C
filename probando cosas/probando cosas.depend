@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1599953247 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\probando cosas\main.c
+1601654512 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\probando cosas\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
+	<string.h>
 

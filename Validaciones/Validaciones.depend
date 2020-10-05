@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1601471917 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\validaciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
