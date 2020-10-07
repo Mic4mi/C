@@ -148,3 +148,5 @@ void mostrarDeporte(eDeporte sport) {
 // de persona a deporte 1:1 (Una persona practica un deporte. Uno a Uno).
 // Una estructura Personas tiene un campo Id deportes que hace referencia a una matriz de deportes
 // que tiene el numero id del deporte y la descripción (nombre) del mismo
+
+//mostrar deporte por id
