@@ -19,9 +19,10 @@ void menu()
     printf("2. BAJA\n");
     printf("3. MODIFICACION\n");
     printf("4. LISTAR\n");
-    printf("5. ORDENAR\n");
-    printf("6. INFORMES\n");
-    printf("7. SALIR\n");
+    printf("5. LISTAR DEPORTES\n");
+    printf("6. ORDENAR\n");
+    printf("7. INFORMES\n");
+    printf("8. SALIR\n");
 }
 
 // harcodeo
@@ -250,7 +251,7 @@ int modifiePersona(ePersona* list, int len)
 }
 
 // borrar personas
-int removeEmployee(Employee* list, int len)
+int removePersona(ePersona* list, int len)
 {
     int error = -1;
     int id;
@@ -259,10 +260,10 @@ int removeEmployee(Employee* list, int len)
     //La función podría devolver 3 enteros (0 - ok, -1 error, 1 ok pero no borró a nadie
     if(list != NULL && len > 0 && len <= 1000)
     {
-        printEmployees(list, len);
-        printf("\nIngrese ID del empleado a eliminar: ");
+        printPersonas(list, len);
+        printf("\nIngrese LEGAJO de la persona a eliminar: ");
         scanf("%d", &id);
-        index = findEmployeeById(list, len, id);
+        index = findPersonaById(list, len, id);
         if(index == -1)
         {
             printf("No hay personas con ese ID\n");
@@ -270,9 +271,9 @@ int removeEmployee(Employee* list, int len)
         else
         {
             printf("****************************************************************************\n");
-            printf("  ID                Nombre             Apellido          Salario     Sector \n");
+            printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento \n");
             printf("****************************************************************************\n");
-            showEmployee(list[index]);
+            showPersona(list[index]);
             printf("Confirmar baja? s - si; n - no\n");
             fflush(stdin);
             scanf("%c", &confirmation);

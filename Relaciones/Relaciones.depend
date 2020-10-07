@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1602041528 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\main.c
+1602043260 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -9,12 +9,12 @@
 
 1602039121 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\datastore.h
 
-1602041423 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.h
+1602041762 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.h
 	"eFechas.h"
 
 1602037877 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\efechas.h
 
-1602041423 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
+1602042926 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>

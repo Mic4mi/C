@@ -22,5 +22,6 @@ void showPersona(ePersona persona);
 int printPersonas(ePersona* list, int len);
 int addPersona(ePersona* list, int len, int ID);
 int modifiePersona(ePersona* list, int len);
+int removePersona(ePersona* list, int len);
 
 #endif // EPERSONAS_H_INCLUDED
