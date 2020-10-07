@@ -10,11 +10,11 @@
 void menu()
 {
     system("cls");
-    printf("**************************************************************************\n");
-    printf("                                 ABM          \n");
-    printf("**************************************************************************\n");
-    printf("                               PERSONAS                    \n");
-    printf("**************************************************************************\n");
+    printf("********************************************************************************************************\n");
+    printf("                                               ABM          \n");
+    printf("********************************************************************************************************\n");
+    printf("                                             PERSONAS                    \n");
+    printf("********************************************************************************************************\n");
     printf("1. ALTA\n");
     printf("2. BAJA\n");
     printf("3. MODIFICACION\n");
@@ -38,7 +38,9 @@ int hardcodearPersonas(ePersona* lista, int tam, int cantPersonas)
                 lista[i].isEmpty = 0;
                 lista[i].legajo = legajos[i];
                 strcpy(lista[i].nombre, nombres[i]);
+                lista[i].sexo = sexos[i];
                 lista[i].altura = alturas[i];
+                lista[i].idDeporte = deportes[i];
                 lista[i].fechaNac.dia = dias[i];
                 lista[i].fechaNac.mes = meses[i];
                 lista[i].fechaNac.anio = anios[i];
@@ -84,19 +86,19 @@ int findPersonaById(ePersona* list, int len,int id)
 }
 
 //Imprimir personas
-int printPersonas(ePersona* list, int len)
+int printPersonas(ePersona* list, int len, eDeporte* sports, int lenD)
 {
     if(list != NULL && len > 0 && len <= 1000)
     {
         //system("cls");
-        printf("****************************************************************************\n");
-        printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento \n");
-        printf("****************************************************************************\n");
+        printf("*******************************************************************************************************\n");
+        printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento               Deporte     \n");
+        printf("*******************************************************************************************************\n");
         for(int i = 0; i < len; i++)
         {
             if(list[i].isEmpty != 1)
             {
-                showPersona(list[i]);
+                showPersona(list[i], sports, lenD);
             }
         }
         printf("\n\n");
@@ -105,23 +107,34 @@ int printPersonas(ePersona* list, int len)
     return -1;
 }
 
-void showPersona(ePersona persona)
+void showPersona(ePersona persona, eDeporte* sports, int tamD)
 {
-    printf("%6d %20s             %c            %4.2f         %d/%d/%d\n",
+    char descDepor[20];
+    for(int i = 0; i < tamD; i++)
+    {
+        if(sports[i].id == persona.idDeporte)
+        {
+            strcpy(descDepor, sports[i].descripcion);
+        }
+    }
+    printf("%6d %20s             %c            %4.2f         %d/%d/%d      %20s\n",
            persona.legajo,
            persona.nombre,
            persona.sexo,
            persona.altura,
            persona.fechaNac.dia,
            persona.fechaNac.mes,
-           persona.fechaNac.anio);
+           persona.fechaNac.anio,
+           descDepor);
 }
 
 // Añadir personas
-int addPersona(ePersona* list, int len, int ID)
+int addPersona(ePersona* list, int len, int ID, eDeporte* sports, int lenD)
 {
     ePersona nuevaPer;
     int validName;
+    int deporteId;
+    int idDeporteValido;
     if(list != NULL && len > 0 && len <= 1000)
     {
         for(int i = 0; i < len; i++)
@@ -158,6 +171,18 @@ int addPersona(ePersona* list, int len, int ID)
                 //Pedir fecha nac
                 printf("\nIngrese su fecha de nacimiento dd/mm/aaaa: ");
                 scanf("%d/%d/%d", &nuevaPer.fechaNac.dia, &nuevaPer.fechaNac.mes, &nuevaPer.fechaNac.anio);
+                //Pedir deporte
+                mostrarDeportes(sports, lenD);
+                printf("\nIngrese deporte: ");
+                scanf("%d", &deporteId);
+                idDeporteValido = findDeporteById(sports, lenD, deporteId);
+                while(idDeporteValido < 0)
+                {
+                    printf("\nDato invalido. Ingrese deporte: ");
+                    scanf("%d", &deporteId);
+                    idDeporteValido = findDeporteById(sports, lenD, deporteId);
+                }
+                nuevaPer.idDeporte = deporteId;
 
                 list[i] = nuevaPer;
                 return 0;
@@ -170,7 +195,7 @@ int addPersona(ePersona* list, int len, int ID)
 }
 
 //Modificar personas
-int modifiePersona(ePersona* list, int len)
+int modifiePersona(ePersona* list, int len, eDeporte* listD, int lenD)
 {
     ePersona nuevaPer;
     int validName;
@@ -179,9 +204,11 @@ int modifiePersona(ePersona* list, int len)
     int index;
     int rst;
     int mOption;
+    int deporteId;
+    int idDeporteValido;
     if(list != NULL && len > 0 && len <= 1000)
     {
-        printPersonas(list, len);
+        printPersonas(list, len, listD, lenD);
         printf("\nIngrese legajo del empleado a modificar: ");
         scanf("%d", &id);
         index = findPersonaById(list, len, id);
@@ -192,16 +219,17 @@ int modifiePersona(ePersona* list, int len)
         }
         else
         {
-            printf("****************************************************************************\n");
-            printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento \n");
-            printf("****************************************************************************\n");
-            showPersona(list[index]);
+            printf("*******************************************************************************************************\n");
+            printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento               Deporte     \n");
+            printf("*******************************************************************************************************\n");
+            showPersona(list[index], listD, lenD);
             printf("4. MODIFICAR:\n");
             printf("1. Nombre\n");
             printf("2. Sexo\n");
             printf("3. Altura\n");
             printf("4. Fecha de Nacimiento\n");
-            rst = getOption(&mOption, "\nOpcion invalida\n", 1, 4);
+            printf("5. Deporte\n");
+            rst = getOption(&mOption, "\nOpcion invalida\n", 1, 5);
             if(!rst)
             {
                 switch(mOption)
@@ -241,6 +269,22 @@ int modifiePersona(ePersona* list, int len)
                     printf("\nIngrese fecha de nacimiento: ");
                     scanf("%d/%d/%d", &list[index].fechaNac.dia, &list[index].fechaNac.mes, &list[index].fechaNac.anio);
                     break;
+                case 5:
+                    //Pedir deporte
+                    mostrarDeportes(listD, lenD);
+                    printf("\nIngrese deporte: ");
+                    scanf("%d", &deporteId);
+                    idDeporteValido = findDeporteById(listD, lenD, deporteId);
+                    while(idDeporteValido < 0)
+                    {
+                        printf("\nDato invalido. Ingrese deporte: ");
+                        fflush(stdin);
+                        scanf("%d", &deporteId);
+                        idDeporteValido = findDeporteById(listD, lenD, deporteId);
+                    }
+                    nuevaPer.idDeporte = deporteId;
+                    list[index].idDeporte = nuevaPer.idDeporte;
+                    break;
                 }
             }
             error = 0;
@@ -251,7 +295,7 @@ int modifiePersona(ePersona* list, int len)
 }
 
 // borrar personas
-int removePersona(ePersona* list, int len)
+int removePersona(ePersona* list, int len, eDeporte* listD, int lenD)
 {
     int error = -1;
     int id;
@@ -260,7 +304,7 @@ int removePersona(ePersona* list, int len)
     //La función podría devolver 3 enteros (0 - ok, -1 error, 1 ok pero no borró a nadie
     if(list != NULL && len > 0 && len <= 1000)
     {
-        printPersonas(list, len);
+        printPersonas(list, len, listD, lenD);
         printf("\nIngrese LEGAJO de la persona a eliminar: ");
         scanf("%d", &id);
         index = findPersonaById(list, len, id);
@@ -270,10 +314,10 @@ int removePersona(ePersona* list, int len)
         }
         else
         {
-            printf("****************************************************************************\n");
-            printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento \n");
-            printf("****************************************************************************\n");
-            showPersona(list[index]);
+            printf("*******************************************************************************************************\n");
+            printf("  Legajo                Nombre        Sexo         Altura      F. Nacimiento               Deporte     \n");
+            printf("********************************************************************************************************\n");
+            showPersona(list[index], listD, lenD);
             printf("Confirmar baja? s - si; n - no\n");
             fflush(stdin);
             scanf("%c", &confirmation);

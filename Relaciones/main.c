@@ -2,21 +2,19 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "ePersonas.h"
 #include "validaciones.h"
+#include "eDeporte.h"
+#include "ePersonas.h"
 #define TAM 25
 #define TAM_D 6
-#define INIT_ID 2000
+#define INIT_ID 20000
 
-typedef struct
-{
-    int id;
-    char descripcion[20];
-} eDeporte;
-
-int mostrarDeportes(eDeporte* sports, int tam);
-void mostrarDeporte(eDeporte sport);
-
+/*
+Informe:
+La idea es mostrar a las personas por x parametro
+Ej: Mostrar por sexo:
+1_ Solo debe mostrar las personas por sexo f o m según corresponda
+*/
 
 int main()
 {
@@ -41,13 +39,12 @@ int main()
         {1002, "Patin"},
         {1003, "Esqui"},
         {1004, "Surf"},
-        {1005, "Parapente"},
+        {1005, "Parapente"}
     };
-
 
     initPersonas(list, TAM);
     resultadoHarcodeo = hardcodearPersonas(list, TAM, 10);
-    actualID += resultadoHarcodeo;
+    actualID += resultadoHarcodeo + 1;
     do
     {
         menu();
@@ -57,7 +54,7 @@ int main()
             switch(opcion)
             {
             case 1:
-                addPer = addPersona(list, TAM, actualID);
+                addPer = addPersona(list, TAM, actualID, deportes, TAM_D);
                 if(addPer < 0)
                 {
                     printf("Ha ocurrido un problema. Intente nuevamente\n");
@@ -69,7 +66,7 @@ int main()
                 }
                 break;
             case 2:
-                borrar = removePersona(list, TAM);
+                borrar = removePersona(list, TAM, deportes, TAM_D);
                 if(!borrar)
                 {
                     printf("Baja exitosa.\n");
@@ -84,7 +81,7 @@ int main()
                 }
                 break;
             case 3:
-                modificarPer = modifiePersona(list, TAM);
+                modificarPer = modifiePersona(list, TAM, deportes, TAM_D);
                 if(!modificarPer)
                 {
                     printf("Modificacion exitosa.\n");
@@ -95,7 +92,7 @@ int main()
                 }
                 break;
             case 4:
-                imprimirPersonas = printPersonas(list, TAM);
+                imprimirPersonas = printPersonas(list, TAM, deportes, TAM_D);
                 if(imprimirPersonas < 0)
                 {
                     printf("\nError al imprimir personas./n");
@@ -123,30 +120,25 @@ int main()
     return 0;
 }
 
-int mostrarDeportes(eDeporte* sports, int tam)
-{
+
+
+/*
+//informar x deporte
+int informarXDeporte(ePersona lista, int tamP, eDeporte listaD, int tamD){
     int error = -1;
-    if(sports != NULL && tam > 0)
-    {
+    int deportID;
+    if(lista != NULL && listaD != NULL && tamP > 0 && tamD > 0){
+        system("cls");
         printf("******************************************\n");
         printf("               DEPORTES \n"                 );
         printf("****************************************** \n");
         printf("   ID            DESCRIPCION\n"               );
         printf("******************************************\n");
-        for(int i = 0; i < tam; i++) {
-            mostrarDeporte(sports[i]);
-        }
-        printf("\n\n");
-        error = 0;
+        mostrarDeportes(listaD, tamD);
+        printf("\nIngrese ID del deporte: ");
+        //fflush(stdin);
+        scanf("%d", &deportID);
+        printf("\nNombres")
     }
-    return error;
 }
-void mostrarDeporte(eDeporte sport) {
-    printf("%d      %20s\n", sport.id, sport.descripcion);
-}
-// Un deporte puede ser practicado por muchas personas = m:1 (Uno a muchos).
-// de persona a deporte 1:1 (Una persona practica un deporte. Uno a Uno).
-// Una estructura Personas tiene un campo Id deportes que hace referencia a una matriz de deportes
-// que tiene el numero id del deporte y la descripción (nombre) del mismo
-
-//mostrar deporte por id
+*/

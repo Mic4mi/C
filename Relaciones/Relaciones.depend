@@ -1,20 +1,22 @@
 # depslib dependency file v1.0
-1602043260 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\main.c
+1602080198 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
-	"ePersonas.h"
 	"validaciones.h"
+	"eDeporte.h"
+	"ePersonas.h"
 
-1602039121 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\datastore.h
+1602076933 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\datastore.h
 
-1602041762 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.h
+1602079207 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.h
+	"eDeporte.h"
 	"eFechas.h"
 
 1602037877 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\efechas.h
 
-1602042926 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
+1602079812 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -32,4 +34,14 @@
 	<ctype.h>
 	<string.h>
 	"validaciones.h"
+
+1602079206 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\edeporte.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"eDeporte.h"
+	"ePersonas.h"
+
+1602076093 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\edeporte.h
 
