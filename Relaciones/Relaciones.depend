@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1602041528 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"ePersonas.h"
+	"validaciones.h"
+
+1602039121 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\datastore.h
+
+1602041423 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.h
+	"eFechas.h"
+
+1602037877 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\efechas.h
+
+1602041423 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"dataStore.h"
+	"eFechas.h"
+	"ePersonas.h"
+	"validaciones.h"
+
+1602039994 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\validaciones.h
+
+1602039789 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"validaciones.h"
+
