@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "validaciones.h"
 #include "eDeporte.h"
+#include "validaciones.h"
 #include "ePersonas.h"
 #define TAM 25
 #define TAM_D 6
@@ -142,3 +142,5 @@ int informarXDeporte(ePersona lista, int tamP, eDeporte listaD, int tamD){
     }
 }
 */
+
+

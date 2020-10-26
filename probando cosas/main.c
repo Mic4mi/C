@@ -12,6 +12,7 @@ int main()
 // a. Realizar un algoritmo que lea dos números y nos diga cual de ellos es mayor o bien si son iguales ♣
 //b. Los siguientes números {10,5,23,7,15,65,85} se encuentran en un arreglo. Realizar un algoritmo que los sume.
 
+/*
     int numeros[] = {10,5,23,7,15,65,85};
     int sumaNumeros;
 
@@ -22,6 +23,13 @@ int main()
     printf("La suma del arreglo de numeros es: %d\n", sumaNumeros);
     //punto c
     sumarArreglo2(numeros, 7);
+*/
+if(1 && -1){
+    printf("Bruno");
+} else {
+    printf("Teclado");
+}
+
 
     return 0;
 }

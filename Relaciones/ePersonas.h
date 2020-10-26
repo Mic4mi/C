@@ -1,8 +1,6 @@
 #ifndef EPERSONAS_H_INCLUDED
 #define EPERSONAS_H_INCLUDED
-#include "eDeporte.h"
 #include "eFechas.h"
-
 
 
 typedef struct

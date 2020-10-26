@@ -16,7 +16,7 @@
 
 1602037877 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\efechas.h
 
-1602079812 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
+1602080359 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\epersonas.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -43,5 +43,6 @@
 	"eDeporte.h"
 	"ePersonas.h"
 
-1602076093 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\edeporte.h
+1602081894 c:\users\micae\onedrive\escritorio\utn\prog & lab\c\relaciones\edeporte.h
+	"ePersonas.h"
 

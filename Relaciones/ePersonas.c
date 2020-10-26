@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include "eDeporte.h"
 #include "dataStore.h"
 #include "eFechas.h"
 #include "ePersonas.h"

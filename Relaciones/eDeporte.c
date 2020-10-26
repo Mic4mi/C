@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 #include "eDeporte.h"
-#include "ePersonas.h"
+
 
 int mostrarDeportes(eDeporte* sports, int tam)
 {
@@ -62,3 +62,4 @@ int cargarDescripcionDeporte(eDeporte* sports, int len, int id, char descripcion
     }
     return error;
 }
+
