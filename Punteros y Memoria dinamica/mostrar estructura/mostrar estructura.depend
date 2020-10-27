@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1603836003 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\punteros y memoria dinamica\mostrar estructura\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
