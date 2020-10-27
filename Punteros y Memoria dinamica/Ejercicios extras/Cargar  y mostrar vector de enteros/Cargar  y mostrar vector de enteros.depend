@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1603839412 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\punteros y memoria dinamica\ejercicios extras\cargar  y mostrar vector de enteros\main.c
+	<stdio.h>
+	<stdlib.h>
+
