@@ -33,13 +33,11 @@ int cargarVector(int* vec, int tam)
     return error;
 }
 
-
-
 void mostrarVector(int* vec, int tam)
 {
     if(vec != NULL)
     {
-        printf("\nEl vector quedó: \n");
+        printf("\nEl vector quedo: \n");
         for(int i = 0; i < tam; i++)
         {
             printf("%d\n", *(vec + i));
