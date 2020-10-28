@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1603848484 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\c\punteros y memoria dinamica\ejercicios extras\informes con estructuras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
