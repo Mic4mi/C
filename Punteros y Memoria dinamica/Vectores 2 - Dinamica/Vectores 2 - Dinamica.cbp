@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Vectores 2 - Dinamica" />
+		<Option title="Modificar tamaño de vector - Dinamica" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
