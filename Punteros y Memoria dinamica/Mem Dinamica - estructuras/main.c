@@ -14,10 +14,14 @@ int mostrarEmpleado(eEmpleado* pEmp);
 eEmpleado* newEmpleado();
 eEmpleado* newEmpleadoParam(int legajo, char* nombre, char sexo, float sueldo);
 //validar
+//set
 int empleado_setLegajo(eEmpleado* pEmp, int legajo);
 int empleado_setSueldo(eEmpleado* pEmp, float sueldo);
 int empleado_setSexo(eEmpleado* pEmp, char sexo);
 int empleado_setNombre(eEmpleado* pEmp, char*nombre);
+//get
+int empleado_getLegajo(eEmpleado* pEmp, int* pLegajo);
+
 
 int main()
 {
@@ -140,6 +144,7 @@ int empleado_setLegajo(eEmpleado* pEmp, int legajo)
     return error;
 }
 
+
 int empleado_setSueldo(eEmpleado* pEmp, float sueldo)
 {
     int error = -1;
@@ -178,3 +183,17 @@ int empleado_setNombre(eEmpleado* pEmp, char*nombre)
 
     return error;
 }
+
+int empleado_getLegajo(eEmpleado* pEmp, int* pLegajo)
+{
+    int error = -1;
+
+    if(pEmp != NULL && pLegajo != NULL)
+    {
+        *pLegajo = pEmp->legajo;
+        error = 0;
+    }
+
+    return error;
+}
+

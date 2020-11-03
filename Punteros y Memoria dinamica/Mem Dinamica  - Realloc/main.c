@@ -45,7 +45,7 @@ int main()
     if(pNumerosAux != NULL)
     {
         pNumeros = pNumerosAux;
-        tam = tam * 2;
+        tam *= 2;
         printf("\nVector redimensionado con exito\n");
         pNumerosAux = NULL;
     }
