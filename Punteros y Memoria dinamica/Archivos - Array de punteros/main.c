@@ -16,6 +16,9 @@ int personas_buscarLibre(int* pIndice, ePersona** lista, int tam);
 int personas_mostrarItem(ePersona* persona);
 int personas_mostrarLista(ePersona** lista, int tam);
 
+//Contructora
+ePersona* persona_new();
+
 int main()
 {
     int tam = 5;
@@ -63,7 +66,7 @@ int main()
     else
     {
         printf("\n%d\n", indiceLibre);
-        auxPersona = (ePersona*) malloc(sizeof(ePersona));
+        auxPersona = persona_new();
         if(auxPersona == NULL)
         {
             printf("\nNo se pudo conseguir espacio en la memoria.\n");
@@ -170,3 +173,8 @@ int personas_mostrarLista(ePersona** lista, int tam)
     return error;
 }
 
+ePersona* persona_new()
+{
+    //Nosotros al invocar esta funcion debemos asegurarnos que devuelva algo distinto de null
+    return (ePersona*) malloc(sizeof(ePersona));
+}
