@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1604417350 source:c:\users\mica\desktop\utn\prog & lab\c\punteros y memoria dinamica\archivos - array de punteros\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
