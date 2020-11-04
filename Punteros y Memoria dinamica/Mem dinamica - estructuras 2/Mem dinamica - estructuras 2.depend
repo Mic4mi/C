@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1604325630 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\practica con magoo\mem dinamica - estructuras 2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
